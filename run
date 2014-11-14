@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+BUBBLE_USERSCRIPT_DIRECTORY="$(realpath ./scripts)"
+[ "$DEBUG" = "0" ] || DEBUG=1
+
+export BUBBLE_USERSCRIPT_DIRECTORY
+export DEBUG
+
+cfx --overload-modules \
+    --binary "$HOME/.local/bin/firefox" \
+    --pkgdir="$(dirname "$PWD/$0")" \
+    --profiledir="$HOME/.mozilla/firefox/cfx" \
+    run

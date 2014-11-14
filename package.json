@@ -1,0 +1,26 @@
+{
+    "name": "bubble",
+    "title": "bubble",
+    "id": "jid1-BUBBLEIs7871vQ",
+    "description": "b-b-b-b-bubble but",
+    "author": "kafene software",
+    "homepage": "http://kafene.org/",
+    "license": "MPL 2.0",
+    "version": "0.3",
+    "preferences": [
+        {
+            "name": "userscript_directory",
+            "title": "Userscript directory",
+            "description": "Where userscripts are loaded from",
+            "type": "directory",
+            "value": ""
+        },
+        {
+            "name": "rules",
+            "title": "Content filtering rules",
+            "description": "",
+            "type": "string",
+            "value": ""
+        }
+    ]
+}
