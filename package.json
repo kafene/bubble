@@ -2,11 +2,11 @@
     "name": "bubble",
     "title": "bubble",
     "id": "jid1-BUBBLEIs7871vQ",
-    "description": "b-b-b-b-bubble but",
+    "description": "A multipurpose extension for adding content scripts (userscripts, user styles), modifying request and response headers, modifying query parameters, and otherwise customizing your internet experience.",
     "author": "kafene software",
     "homepage": "http://kafene.org/",
     "license": "MPL 2.0",
-    "version": "0.3",
+    "version": "0.4.0",
     "preferences": [
         {
             "name": "userscript_directory",
