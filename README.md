@@ -1,3 +1,6 @@
+**Warning: this extension is not yet complete and not fully tested
+or functional. It is not ready for general consumption yet.**
+
 # Bubble
 
 A multipurpose Firefox extension for adding content scripts
