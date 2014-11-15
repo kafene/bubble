@@ -40,7 +40,7 @@
     "google.com": {
         "remove_query_parameter": ["aq", "client", "rls"]
     },
-    "^https?:\\/\\/(chrome|play)\\.google\\.com$": {
+    "/^https?:\\/\\/(chrome|play)\\.google\\.com$/": {
         "remove_query_parameter": ["hl"]
     },
     "addons.opera.com": {
