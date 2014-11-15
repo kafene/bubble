@@ -8,6 +8,6 @@ export DEBUG
 
 cfx --overload-modules \
     --binary "$HOME/.local/bin/firefox" \
-    --pkgdir="$(dirname "$PWD/$0")" \
+    --pkgdir="$(dirname "$(realpath "$BASH_SOURCE")")" \
     --profiledir="$HOME/.mozilla/firefox/cfx" \
     run
