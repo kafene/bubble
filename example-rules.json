@@ -35,7 +35,7 @@
         "remove_query_parameter": ["ref", "fref", "hc_location"]
     },
     "amazon.com": {
-        "remove_query_parameter": ["qid", "sr", "keywords", "ie", "s", "ref"]
+        "remove_query_parameter": ["qid", "sr", "keywords", "ie", "s", "ref", "refRID"]
     },
     "google.com": {
         "remove_query_parameter": ["aq", "client", "rls"]
@@ -55,8 +55,10 @@
     "imdb.com": {
         "remove_query_parameter": ["ref_"]
     },
+    "youtube.com": {
+        "remove_query_parameter": ["feature"]
+    },
     "/^http:\\/\\/(www\\.)?youtube.com\\/watch\\?/i": {
-        "remove_query_parameter": ["feature"],
         "add_query_parameter": ["html5=1", "autoplay=0"]
     },
     "pgl.yoyo.org": {
