@@ -2,7 +2,7 @@
     "name": "bubble",
     "title": "bubble",
     "id": "jid1-BUBBLEIs7871vQ",
-    "description": "A multipurpose extension for adding content scripts (userscripts, user styles), modifying request and response headers, modifying query parameters, and otherwise customizing your internet experience.",
+    "description": "A multipurpose Firefox extension for adding content scripts (userscripts, user styles), modifying request and response headers, modifying query parameters, and otherwise customizing your internet experience.",
     "author": "kafene software",
     "homepage": "http://kafene.org/",
     "license": "MPL 2.0",
@@ -18,7 +18,7 @@
         {
             "name": "rules",
             "title": "Content filtering rules",
-            "description": "",
+            "description": "JSON text describing content filtering rules. See the README for info.",
             "type": "string",
             "value": ""
         }
