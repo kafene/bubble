@@ -1,0 +1,6 @@
+/test               export-ignore
+/.gitattributes     export-ignore
+/scripts            export-ignore
+/.editorconfig      export-ignore
+/.gitignore         export-ignore
+/example-rules.json export-ignore
