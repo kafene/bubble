@@ -1,0 +1,82 @@
+{
+    "<all_urls>": {
+        "set_response_header": {
+            "Content-Security-Policy": "",
+            "X-Content-Security-Policy": "",
+            "X-WebKit-CSP": ""
+        },
+        "remove_query_parameter": [
+            "utm_source",
+            "utm_medium",
+            "utm_term",
+            "utm_content",
+            "utm_campaign",
+            "utm_reader",
+            "utm_place",
+            "ga_source",
+            "ga_medium",
+            "ga_term",
+            "ga_content",
+            "ga_campaign",
+            "ga_reader",
+            "ga_place",
+            "yclid",
+            "_openstat",
+            "fb_action_ids",
+            "fb_action_types",
+            "fb_ref",
+            "fb_source",
+            "action_object_map",
+            "action_type_map",
+            "action_ref_map"
+        ]
+    },
+    "facebook.com": {
+        "remove_query_parameter": ["ref", "fref", "hc_location"]
+    },
+    "amazon.com": {
+        "remove_query_parameter": ["qid", "sr", "keywords", "ie", "s", "ref"]
+    },
+    "google.com": {
+        "remove_query_parameter": ["aq", "client", "rls"]
+    },
+    "^https?:\\/\\/(chrome|play)\\.google\\.com$": {
+        "remove_query_parameter": ["hl"]
+    },
+    "addons.opera.com": {
+        "remove_query_parameter": ["display", "language"]
+    },
+    "addons.mozilla.org": {
+        "remove_query_parameter": ["collection_id", "src"]
+    },
+    "f-droid.org": {
+        "remove_query_parameter": ["fdfilter", "fdpage", "fdid"]
+    },
+    "imdb.com": {
+        "remove_query_parameter": ["ref_"]
+    },
+    "/^http:\\/\\/(www\\.)?youtube.com\\/watch\\?/i": {
+        "remove_query_parameter": ["feature"],
+        "add_query_parameter": ["html5=1", "autoplay=0"]
+    },
+    "pgl.yoyo.org": {
+        "@comment": "Test on http://pgl.yoyo.org/http/browser-headers.php",
+
+        "set_request_header": {
+            "X-Test-Param": "Bubble"
+        }
+    },
+    "www.reliply.org": {
+        "@comment": "Test on http://www.reliply.org/tools/requestheaders.php",
+
+        "set_request_header": {
+            "User-Agent": "Bubble/1.0"
+        }
+    },
+    "www.some-site-i-want-cross-origin-scripts-to-load-on.tld": {
+        "set_response_header": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST,GET"
+        }
+    }
+}
