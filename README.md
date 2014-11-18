@@ -49,6 +49,7 @@ value "all" to get full debug output.
 - [sdk/tabs](http://mzl.la/1xE3s4k)
 - [sdk/querystring](http://mzl.la/1xpwztL)
 - [sdk/system/events](http://mzl.la/1ECYHIP)
+- [sdk/util/object](http://mzl.la/1wTOUtD)
 - [nsIHttpChannel](http://mzl.la/1vbtw7H)
 - [nsIURI](http://mzl.la/11gFEqM)
 - [chrome](http://mzl.la/1x0tqiA)
