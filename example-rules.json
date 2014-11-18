@@ -59,7 +59,10 @@
         "remove_query_parameter": ["feature"]
     },
     "/^http:\\/\\/(www\\.)?youtube.com\\/watch\\?/i": {
-        "add_query_parameter": ["html5=1", "autoplay=0"]
+        "add_query_parameter": {
+            "html5": "1",
+            "autoplay": "0"
+        }
     },
     "pgl.yoyo.org": {
         "@comment": "Test on http://pgl.yoyo.org/http/browser-headers.php",
