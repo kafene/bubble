@@ -38,6 +38,21 @@ it's running a browser instance. You may wish to go into `about:config` and
 add the entry `extensions.jid1-BUBBLEIs7871vQ.sdk.console.logLevel` with the
 value "all" to get full debug output.
 
+## SDK Reference
+
+- [sdk/system/environment](http://mzl.la/1wxoihW)
+- [sdk/io/file](http://mzl.la/1usXjqK)
+- [sdk/url](http://mzl.la/1yECxns)
+- [sdk/simple-prefs](http://mzl.la/1v8RVvj)
+- [sdk/content/mod](http://mzl.la/1BnKmnp)
+- [sdk/stylesheet/style](http://mzl.la/1xW2Ghq)
+- [sdk/tabs](http://mzl.la/1xE3s4k)
+- [sdk/querystring](http://mzl.la/1xpwztL)
+- [sdk/system/events](http://mzl.la/1ECYHIP)
+- [nsIHttpChannel](http://mzl.la/1vbtw7H)
+- [nsIURI](http://mzl.la/11gFEqM)
+- [chrome](http://mzl.la/1x0tqiA)
+
 ## License
 
 This Source Code Form is subject to the terms of the Mozilla Public
