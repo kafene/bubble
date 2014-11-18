@@ -19,6 +19,47 @@ entry field, so it's a single line, but pasting multi-line content
 works fine. In the future it may be changed to a file you can place
 anywhere to make editing rules easier.
 
+## Setting request headers
+
+Setting request headers overrides outgoing headers sent from the browser.
+Header names are case-insensitive.
+Header values set to the empty string or `null` will be removed instead of set.
+Websites you connect to will see any headers added or replaced instead of
+the originals. This can be used to override or remove, for example the
+`Referer`, `Origin`, and `User-Agent` headers.
+
+## Setting response headers
+
+Setting response headers overrides incoming headers from websites.
+Header names are case-insensitive.
+Header values set to the empty string or `null` will be removed instead of set.
+The browser will interpret the incoming headers after they are processed,
+so this can be used to override some browser functionality, including
+introducing security vulnerabilities and other problems by changing headers
+like `Content-Security-Policy`, `Access-Control-Allow-Origin`,
+`Strict-Transport-Security`, and other security related headers.
+If you know what you're doing though, this can be a quite powerful thing!
+
+As far as I'm aware, no currently developed AMO extension provides this
+functionality and it is the main reason for this extension's existence.
+
+## Attaching content scripts
+
+If there is an environment variable named `BUBBLE_USERSCRIPT_DIRECTORY`,
+that is always used as the directory for content scripts.
+Else if there is a preference set in the extension settings, that is used.
+Otherwise, ~/.js/ is used, and the extension userscript directory preference
+is set to that value as a default.
+
+Content scripts are loaded sorted by name -- this allows priority loading.
+For example, 01-jquery.user.js will be loaded before 02-jquery-plugin.user.js,
+and both will be loaded before my_userscript.user.js, so that dependencies
+can be ordered correctly.
+
+Content scripts are injected immediately when the tab's DOM is ready, and
+immediately have sandboxed access to the document. The `unsafeWindow`
+property is available for unsandboxed access.
+
 ## Building
 
 You'll need [cfx](http://mzl.la/1x3gBUI) and the
