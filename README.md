@@ -19,29 +19,50 @@ entry field, so it's a single line, but pasting multi-line content
 works fine. In the future it may be changed to a file you can place
 anywhere to make editing rules easier.
 
-## Setting request headers
+## rules.json
 
-Setting request headers overrides outgoing headers sent from the browser.
-Header names are case-insensitive.
-Header values set to the empty string or `null` will be removed instead of set.
-Websites you connect to will see any headers added or replaced instead of
-the originals. This can be used to override or remove, for example the
-`Referer`, `Origin`, and `User-Agent` headers.
+You can use a file, containing valid JSON (but called whatever you want) to
+specify rules for request/response filtering. Rules can modify request and
+response headers, and add and remove query parameters. In the future more
+functionality may be added.
 
-## Setting response headers
+The rules file must contain an array of objects, each object representing
+a rule. When you visit a URL, all of the rules are iterated through and
+the rules that should apply to that URL are combined into a single rule
+which is used to perform the modifications.
 
-Setting response headers overrides incoming headers from websites.
-Header names are case-insensitive.
-Header values set to the empty string or `null` will be removed instead of set.
-The browser will interpret the incoming headers after they are processed,
-so this can be used to override some browser functionality, including
-introducing security vulnerabilities and other problems by changing headers
-like `Content-Security-Policy`, `Access-Control-Allow-Origin`,
-`Strict-Transport-Security`, and other security related headers.
-If you know what you're doing though, this can be a quite powerful thing!
+Here is an example rule, containing all of the available keys:
 
-As far as I'm aware, no currently developed AMO extension provides this
-functionality and it is the main reason for this extension's existence.
+```json
+{
+    "disabled": false,
+    "@comment": "This rule is not disabled",
+    "match": "google.com",
+    "match_type": "hostname",
+    "include_subdomains": true,
+    "set_request_header": {
+        "X-Google-Message": "Hello, Google!"
+    },
+    "set_response_header": {
+        "X-Google-Reply": "Hello from Google!"
+    },
+    "set_query_parameter": {
+        "q": "I always search for this",
+        "client": null
+    }
+}
+```
+
+**What these do:**
+
+- **disabled**: Determines whether the rule is disabled or not.
+- **@comment**: Nothing, it's just for adding a comment, since JSON does not otherwise support comments.
+- **match**: This is the pattern to match. It can either be an exact string, or a regular expression, regular expressions are formatted like `"/^(www\\.)?domain\\.tld/i"` - much like a literal javascript regular expression. The supported flags are `g`, `m`, `s`, and `i`; the only one of much use is `i`, to set the matching to be case-insensitive. The special value `<all_urls>` matches all urls.
+- **match_type**: This decides the key which **match** will be executed against. Valid keys are `scheme`, `userPass`, `host`, `port`, `path`, `hostname`, `pathname`, `hash`, `href`, `origin`, `protocol`, and `search`. You can read more about what each means at [the addon-sdk documentation for sdk/url](http://mzl.la/1F0L1t3).
+- **include_subdomains**: For matches against `host` or `hostname`, this determines whether subdomains will be included in the match. This is only compatible with simple strings, not regular expressions. It is essentially equivalent to the regular expression `/(^|\.)domain\.tld$/i`.
+- **set_request_header**: These are request headers which will be sent by the browser. You may provide the empty string, or `null` to remove a header instead of setting it. Header names are case-insensitive. This can be used to override or remove, for example the `Referer`, `Origin`, and `User-Agent` headers.
+- **set_response_header**: These are the response headers which the browser will receive. You may provide the empty string, or `null` to remove a header instead of setting it. Header names are case-insensitive. This can be used to override some browser functionality, including introducing security vulnerabilities and other problems by changing headers like `Content-Security-Policy`, `Access-Control-Allow-Origin`, `Strict-Transport-Security`, and other security related headers. If you know what you're doing though, this can be a quite powerful thing! As far as I'm aware, no currently developed AMO extension provides this functionality and it is the main reason for this extension's existence.
+- **set_query_parameter**: These are query parameters which will be added or removed from matching URLs. To remove a query parameter, set its value to `null`, to set it, any string will do.
 
 ## Attaching content scripts
 
