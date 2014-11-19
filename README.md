@@ -59,7 +59,7 @@ You'll need [cfx](http://mzl.la/1x3gBUI) and the [add-on SDK](http://mzl.la/1EGy
 
 If you're running from the command line you can see error messages and debug logs there. They also appear in the browser console (`Ctrl+Shift+J`). Unfortunately some error messages from the browser's internals and the SDK itself occasionally sneak in, which are unrelated to this extension.
 
-By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's running a browser instance. You may wish to go into `about:config` and add the entry `extensions.jid1-BUBBLEIs7871vQ.sdk.console.logLevel` with the value "all" to get full debug output.
+By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's running a browser instance. You may wish to go into `about:config` and add the entry `extensions.jid1-BUBBLEIs7871vQ@jetpack.sdk.console.logLevel` with the value "all" to get full debug output.
 
 ## Links
 
