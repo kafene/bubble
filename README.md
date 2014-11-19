@@ -1,6 +1,6 @@
 **Warning: this extension is not yet complete and not fully tested or functional. It is not ready for general consumption yet.**
 
-# Bubble
+# ![icon](/images/icon.png) Bubble
 
 A multipurpose Firefox extension for adding content scripts (userscripts, user styles), modifying request and response headers, modifying query parameters, and otherwise customizing your internet experience.
 
