@@ -94,6 +94,7 @@ By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's ru
 - [x] maybe have an includeSubdomains directive in rules
 - [ ] Only change query string in top frame?
 - [ ] Once sdk/io/fs.watchFile is implemented, use that instead of loading the config files on every request.
+- [ ] More detailed matching semantics for rules?
 
 ## License
 
