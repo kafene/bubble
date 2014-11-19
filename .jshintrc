@@ -20,7 +20,7 @@
     "strict": true,
     "maxdepth": 4,
     "maxstatements": 15,
-    "maxlen": 100,
+    "maxlen": 120,
     "eqnull": true,
     "devel": true,
     "sub": true,
