@@ -106,6 +106,7 @@ value "all" to get full debug output.
 
 **SDK**:
 
+- [mozilla/addon-sdk](https://github.com/mozilla/addon-sdk)
 - [sdk/system/environment](http://mzl.la/1wxoihW)
 - [sdk/io/file](http://mzl.la/1usXjqK)
 - [sdk/url](http://mzl.la/1yECxns)
