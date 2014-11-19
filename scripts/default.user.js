@@ -1,7 +1,7 @@
 
 // only do this in the top frame
 if (!window.frameElement) {
-    alert('it works!');
+    // alert('it works!');
 }
 
 // Open External Links in New Tab, add rel=noreferrer, remove a[ping]
