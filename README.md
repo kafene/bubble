@@ -84,6 +84,18 @@ By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's ru
 
 - [https://github.com/nrf110/deepmerge](nrf110/deepmerge)
 
+## TODO
+
+- [ ] tests, tests, tests!
+- [ ] documentation - verify all jsdoc syntax and generate
+- [ ] improve readme
+- [ ] look into using an ES6 Symbol for prefs.js/prefs.isListening
+- [ ] use a generator for faster loading content scripts
+- [ ] Query string parameter removal and adding
+- [ ] maybe have an includeSubdomains directive in rules
+- [ ] Only change query string in top frame?
+- [ ] Once sdk/io/fs.watchFile is implemented, use that instead of loading the config files on every request.
+
 ## License
 
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
