@@ -66,18 +66,21 @@ By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's ru
 **SDK**:
 
 - [mozilla/addon-sdk on GitHub](https://github.com/mozilla/addon-sdk)
-- [sdk/system/environment](http://mzl.la/1wxoihW)
 - [sdk/io/file](http://mzl.la/1usXjqK)
 - [sdk/url](http://mzl.la/1yECxns)
 - [sdk/simple-prefs](http://mzl.la/1v8RVvj)
+- [sdk/page-mod](http://mzl.la/1v8RmBw)
 - [sdk/content/mod](http://mzl.la/1BnKmnp)
 - [sdk/stylesheet/style](http://mzl.la/1xW2Ghq)
 - [sdk/tabs](http://mzl.la/1xE3s4k)
 - [sdk/querystring](http://mzl.la/1xpwztL)
+- [sdk/system](http://mzl.la/1AghgVu)
 - [sdk/system/events](http://mzl.la/1ECYHIP)
+- [sdk/system/environment](http://mzl.la/1wxoihW)
 - [sdk/util/object](http://mzl.la/1wTOUtD)
 - [nsIHttpChannel](http://mzl.la/1vbtw7H)
 - [nsIURI](http://mzl.la/11gFEqM)
+- [nsIURL](http://mzl.la/1ymjqid)
 - [chrome](http://mzl.la/1x0tqiA)
 
 **Libraries**:
