@@ -16,10 +16,10 @@
             "value": ""
         },
         {
-            "name": "rules",
+            "name": "rules_file",
             "title": "Content filtering rules",
-            "description": "JSON text describing content filtering rules. See the README for info.",
-            "type": "string",
+            "description": "JSON file describing content filtering rules. See the README for info.",
+            "type": "file",
             "value": ""
         }
     ]

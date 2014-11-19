@@ -5,4 +5,4 @@
 - [ ] use a generator for faster loading content scripts
 - [ ] Query string parameter removal and adding
 - [ ] maybe have an includeSubdomains directive in rules
-- [ ] Only change query string in top domains?
+- [ ] Only change query string in top frame?

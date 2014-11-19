@@ -8,10 +8,12 @@ CFX        ?= $(shell which cfx)
 DEBUG      ?= 1
 PKGDIR     ?= $(realpath .)
 SCRIPTS    ?= "$(PKGDIR)/scripts"
+RULES      ?= "$(PKGDIR)/example-rules.json"
 
 run:
 		DEBUG=$(DEBUG) \
 		BUBBLE_USERSCRIPT_DIRECTORY=$(SCRIPTS) \
+		BUBBLE_RULES_FILE=$(RULES) \
 	$(CFX) \
 		$(CFXFLAGS) \
 		--overload-modules \

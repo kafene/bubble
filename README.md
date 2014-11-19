@@ -58,7 +58,7 @@ Here is an example rule, containing all of the available keys:
 - **disabled**: Determines whether the rule is disabled or not.
 - **@comment**: Nothing, it's just for adding a comment, since JSON does not otherwise support comments.
 - **match**: This is the pattern to match. It can either be an exact string, or a regular expression, regular expressions are formatted like `"/^(www\\.)?domain\\.tld/i"` - much like a literal javascript regular expression. The supported flags are `g`, `m`, `s`, and `i`; the only one of much use is `i`, to set the matching to be case-insensitive. The special value `<all_urls>` matches all urls.
-- **match_type**: This decides the key which **match** will be executed against. Valid keys are `scheme`, `userPass`, `host`, `port`, `path`, `hostname`, `pathname`, `hash`, `href`, `origin`, `protocol`, and `search`. You can read more about what each means at [the addon-sdk documentation for sdk/url](http://mzl.la/1F0L1t3).
+- **match_type**: This decides the key which **match** will be executed against. Valid keys are `scheme`, `userPass`, `host`, `port`, `path`, `hostname`, `pathname`, `hash`, `href`, `origin`, `protocol`, and `search`. The most useful ones are going to be `hostname` and `href`, but you can use any of them. You can read more about what each means at [the addon-sdk documentation for sdk/url](http://mzl.la/1F0L1t3).
 - **include_subdomains**: For matches against `host` or `hostname`, this determines whether subdomains will be included in the match. This is only compatible with simple strings, not regular expressions. It is essentially equivalent to the regular expression `/(^|\.)domain\.tld$/i`.
 - **set_request_header**: These are request headers which will be sent by the browser. You may provide the empty string, or `null` to remove a header instead of setting it. Header names are case-insensitive. This can be used to override or remove, for example the `Referer`, `Origin`, and `User-Agent` headers.
 - **set_response_header**: These are the response headers which the browser will receive. You may provide the empty string, or `null` to remove a header instead of setting it. Header names are case-insensitive. This can be used to override some browser functionality, including introducing security vulnerabilities and other problems by changing headers like `Content-Security-Policy`, `Access-Control-Allow-Origin`, `Strict-Transport-Security`, and other security related headers. If you know what you're doing though, this can be a quite powerful thing! As far as I'm aware, no currently developed extension provides this functionality and it is the main reason for this extension's existence.
@@ -102,7 +102,9 @@ it's running a browser instance. You may wish to go into `about:config` and
 add the entry `extensions.jid1-BUBBLEIs7871vQ.sdk.console.logLevel` with the
 value "all" to get full debug output.
 
-## SDK Reference
+## See Also
+
+**SDK**:
 
 - [sdk/system/environment](http://mzl.la/1wxoihW)
 - [sdk/io/file](http://mzl.la/1usXjqK)
@@ -117,6 +119,10 @@ value "all" to get full debug output.
 - [nsIHttpChannel](http://mzl.la/1vbtw7H)
 - [nsIURI](http://mzl.la/11gFEqM)
 - [chrome](http://mzl.la/1x0tqiA)
+
+**Libraries**:
+
+- [https://github.com/nrf110/deepmerge](nrf110/deepmerge)
 
 ## License
 

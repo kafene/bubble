@@ -1,87 +1,152 @@
-{
-    "<all_urls>": {
+[
+    {
+        "disabled": true,
+        "match": "<all_urls>",
+        "match_type": "href",
         "set_response_header": {
             "Content-Security-Policy": "",
             "X-Content-Security-Policy": "",
             "X-WebKit-CSP": ""
         },
-        "remove_query_parameter": [
-            "utm_source",
-            "utm_medium",
-            "utm_term",
-            "utm_content",
-            "utm_campaign",
-            "utm_reader",
-            "utm_place",
-            "ga_source",
-            "ga_medium",
-            "ga_term",
-            "ga_content",
-            "ga_campaign",
-            "ga_reader",
-            "ga_place",
-            "yclid",
-            "_openstat",
-            "fb_action_ids",
-            "fb_action_types",
-            "fb_ref",
-            "fb_source",
-            "action_object_map",
-            "action_type_map",
-            "action_ref_map"
-        ]
+        "set_query_parameter": {
+            "utm_source": null,
+            "utm_medium": null,
+            "utm_term": null,
+            "utm_content": null,
+            "utm_campaign": null,
+            "utm_reader": null,
+            "utm_place": null,
+            "ga_source": null,
+            "ga_medium": null,
+            "ga_term": null,
+            "ga_content": null,
+            "ga_campaign": null,
+            "ga_reader": null,
+            "ga_place": null,
+            "yclid": null,
+            "_openstat": null,
+            "fb_action_ids": null,
+            "fb_action_types": null,
+            "fb_ref": null,
+            "fb_source": null,
+            "action_object_map": null,
+            "action_type_map": null,
+            "action_ref_map": null
+        }
     },
-    "facebook.com": {
-        "remove_query_parameter": ["ref", "fref", "hc_location"]
+    {
+        "match": "facebook.com",
+        "match_type": "hostname",
+        "include_subdomains": true,
+        "set_query_parameter": {
+            "ref": null,
+            "fref": null,
+            "hc_location": null
+        }
     },
-    "amazon.com": {
-        "remove_query_parameter": ["qid", "sr", "keywords", "ie", "s", "ref", "refRID"]
+    {
+        "match": "amazon.com",
+        "match_type": "hostname",
+        "include_subdomains": true,
+        "set_query_parameter": {
+            "qid": null,
+            "sr": null,
+            "keywords": null,
+            "ie": null,
+            "s": null,
+            "ref": null,
+            "refRID": null
+        }
     },
-    "google.com": {
-        "remove_query_parameter": ["aq", "client", "rls"]
+    {
+        "match": "/(^|www\\.|encrypted\\.)google\\.com$/i",
+        "match_type": "hostname",
+        "set_query_parameter": {
+            "aq": null,
+            "client": null,
+            "rls": null
+        }
     },
-    "/^https?:\\/\\/(chrome|play)\\.google\\.com$/": {
-        "remove_query_parameter": ["hl"]
+    {
+        "match": "/^(chrome|play)\\.google\\.com$/i",
+        "match_type": "hostname",
+        "set_query_parameter": {
+            "hl": null
+        }
     },
-    "addons.opera.com": {
-        "remove_query_parameter": ["display", "language"]
+    {
+        "match": "addons.opera.com",
+        "match_type": "hostname",
+        "set_query_parameter": {
+            "display": null,
+            "language": null
+        }
     },
-    "addons.mozilla.org": {
-        "remove_query_parameter": ["collection_id", "src"]
+    {
+        "match": "addons.mozilla.org",
+        "match_type": "hostname",
+        "set_query_parameter": {
+            "collection_id": null,
+            "src": null
+        }
     },
-    "f-droid.org": {
-        "remove_query_parameter": ["fdfilter", "fdpage", "fdid"]
+    {
+        "match": "f-droid.org",
+        "match_type": "hostname",
+        "include_subdomains": true,
+        "set_query_parameter": {
+            "fdfilter": null,
+            "fdpage": null,
+            "fdid": null
+        }
     },
-    "imdb.com": {
-        "remove_query_parameter": ["ref_"]
+    {
+        "match": "imdb.com",
+        "match_type": "hostname",
+        "include_subdomains": true,
+        "set_query_parameter": {
+            "ref_": null
+        }
     },
-    "youtube.com": {
-        "remove_query_parameter": ["feature"]
+    {
+        "match": "www.youtube.com",
+        "match_type": "hostname",
+        "set_query_parameter": {
+            "feature": null
+        }
     },
-    "/^http:\\/\\/(www\\.)?youtube.com\\/watch\\?/i": {
-        "add_query_parameter": {
+    {
+        "match": "/^https?:\\/\\/(www\\.)?youtube\\.com\\/watch\\?/i",
+        "match_type": "href",
+        "set_query_parameter": {
             "html5": "1",
             "autoplay": "0"
         }
     },
-    "pgl.yoyo.org": {
+    {
         "@comment": "Test on http://pgl.yoyo.org/http/browser-headers.php",
 
+        "match": "pgl.yoyo.org",
+        "match_type": "hostname",
         "set_request_header": {
             "X-Test-Param": "Bubble"
         }
     },
-    "www.reliply.org": {
+    {
         "@comment": "Test on http://www.reliply.org/tools/requestheaders.php",
 
+        "match": "www.reliply.org",
+        "match_type": "hostname",
         "set_request_header": {
             "User-Agent": "Bubble/1.0"
         }
     },
-    "www.some-site-i-want-cross-origin-scripts-to-load-on.tld": {
+    {
+        "match": "www.some-site-i-want-cross-origin-scripts-to-load-on.tld",
+        "match_type": "hostname",
         "set_response_header": {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "POST,GET"
         }
     }
-}
+]
