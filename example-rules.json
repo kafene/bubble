@@ -1,5 +1,6 @@
 [
     {
+        "disabled": true,
         "match": "<all_urls>",
         "match_type": "href",
         "set_response_header": {

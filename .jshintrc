@@ -19,7 +19,7 @@
     "unused": true,
     "strict": true,
     "maxdepth": 4,
-    "maxstatements": 12,
+    "maxstatements": 15,
     "maxlen": 100,
     "eqnull": true,
     "devel": true,
