@@ -1,5 +1,6 @@
 [
     {
+        "disabled": false,
         "match": "<all_urls>",
         "match_type": "href",
         "set_response_header": {
@@ -58,7 +59,6 @@
         }
     },
     {
-        "disabled": true,
         "match": "/(^|www\\.|encrypted\\.)google\\.com$/i",
         "match_type": "hostname",
         "set_query_parameter": {
