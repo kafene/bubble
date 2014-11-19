@@ -5,6 +5,8 @@
     "description": "A multipurpose Firefox extension for adding content scripts (userscripts, user styles), modifying request and response headers, modifying query parameters, and otherwise customizing your internet experience.",
     "author": "kafene software",
     "homepage": "http://kafene.org/",
+    "icon": "icons/icon.png",
+    "icon64": "icons/icon64.png",
     "license": "MPL 2.0",
     "version": "0.5.0",
     "preferences": [

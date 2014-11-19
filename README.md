@@ -65,7 +65,12 @@ By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's ru
 
 **SDK**:
 
+- [The add-on SDK](http://mzl.la/1EGy2uN)
 - [mozilla/addon-sdk on GitHub](https://github.com/mozilla/addon-sdk)
+- [cfx](http://mzl.la/1x3gBUI)
+
+**SDK APIs**
+
 - [sdk/io/file](http://mzl.la/1usXjqK)
 - [sdk/url](http://mzl.la/1yECxns)
 - [sdk/simple-prefs](http://mzl.la/1v8RVvj)
@@ -86,6 +91,10 @@ By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's ru
 **Libraries**:
 
 - [https://github.com/nrf110/deepmerge](nrf110/deepmerge)
+
+---
+
+Icon courtesy of [rejon at openclipart.org](https://openclipart.org/detail/177671/hand-drawn-bubble-remix-by-rejon-177671), licensed [in the public domain](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ## TODO
 
