@@ -95,6 +95,7 @@ By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's ru
 - [ ] Only change query string in top frame?
 - [ ] Once sdk/io/fs.watchFile is implemented, use that instead of loading the config files on every request.
 - [ ] More detailed matching semantics for rules?
+- [ ] Some per-domain logic for loading content scripts and styles, maybe use something like "www.example.com.user.js" and look up filenames by hostname.
 
 ## License
 
