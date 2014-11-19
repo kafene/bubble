@@ -1,23 +1,14 @@
-**Warning: this extension is not yet complete and not fully tested
-or functional. It is not ready for general consumption yet.**
+**Warning: this extension is not yet complete and not fully tested or functional. It is not ready for general consumption yet.**
 
 # Bubble
 
-A multipurpose Firefox extension for adding content scripts
-(userscripts, user styles), modifying request and response headers,
-modifying query parameters, and otherwise customizing your internet experience.
+A multipurpose Firefox extension for adding content scripts (userscripts, user styles), modifying request and response headers, modifying query parameters, and otherwise customizing your internet experience.
 
 ## rules.json
 
-You can use a file, containing valid JSON (but called whatever you want) to
-specify rules for request/response filtering. Rules can modify request and
-response headers, and add and remove query parameters. In the future more
-functionality may be added.
+You can use a file, containing valid JSON (but called whatever you want) to specify rules for request/response filtering. Rules can modify request and response headers, and add and remove query parameters. In the future more functionality may be added.
 
-The rules file must contain an array of objects, each object representing
-a rule. When you visit a URL, all of the rules are iterated through and
-the rules that should apply to that URL are combined into a single rule
-which is used to perform the modifications.
+The rules file must contain an array of objects, each object representing a rule. When you visit a URL, all of the rules are iterated through and the rules that should apply to that URL are combined into a single rule which is used to perform the modifications.
 
 Here is an example rule, containing all of the available keys:
 
@@ -56,46 +47,25 @@ For more examples, see [example-rules.json](/example-rules.json).
 
 ## Attaching content scripts
 
-If there is an environment variable named `BUBBLE_USERSCRIPT_DIRECTORY`,
-that is always used as the directory for content scripts.
-Else if there is a preference set in the extension settings, that is used.
-Otherwise, ~/.js/ is used, and the extension userscript directory preference
-is set to that value as a default.
+If there is an environment variable named `BUBBLE_USERSCRIPT_DIRECTORY`, that is always used as the directory for content scripts. Else if there is a preference set in the extension settings, that is used. Otherwise, ~/.js/ is used, and the extension userscript directory preference is set to that value as a default.
 
-Content scripts are loaded sorted by name -- this allows priority loading.
-For example, 01-jquery.user.js will be loaded before 02-jquery-plugin.user.js,
-and both will be loaded before my_userscript.user.js, so that dependencies
-can be ordered correctly.
+Content scripts are loaded sorted by name -- this allows priority loading. For example, 01-jquery.user.js will be loaded before 02-jquery-plugin.user.js, and both will be loaded before my_userscript.user.js, so that dependencies can be ordered correctly.
 
-Content scripts are injected immediately when the tab's DOM is ready, and
-immediately have sandboxed access to the document. The `unsafeWindow`
-property is available for unsandboxed access.
+Content scripts are injected immediately when the tab's DOM is ready, and immediately have sandboxed access to the document. The `unsafeWindow` property is available for unsandboxed access.
 
 ## Building
 
-You'll need [cfx](http://mzl.la/1x3gBUI) and the
-[add-on SDK](http://mzl.la/1EGy2uN) to build and test the extension.
-You can look at or use the Makefile command `make run` to run the extension
-in a test environment. I recommend creating a separate profile for cfx runs,
-by default it will use a blank, fresh profile every time which can get a bit
-irritating when you want to save a few settings or have some quick access
-bookmarks or history for use during testing.
+You'll need [cfx](http://mzl.la/1x3gBUI) and the [add-on SDK](http://mzl.la/1EGy2uN) to build and test the extension. You can look at or use the Makefile command `make run` to run the extension in a test environment. I recommend creating a separate profile for cfx runs, by default it will use a blank, fresh profile every time which can get a bit irritating when you want to save a few settings or have some quick access bookmarks or history for use during testing.
 
-If you're running from the command line you can see error messages and
-debug logs there. They also appear in the browser console (`Ctrl+Shift+J`).
-Unfortunately some error messages from the browser's internals and the SDK
-itself occasionally sneak in, which are unrelated to this extension.
+If you're running from the command line you can see error messages and debug logs there. They also appear in the browser console (`Ctrl+Shift+J`). Unfortunately some error messages from the browser's internals and the SDK itself occasionally sneak in, which are unrelated to this extension.
 
-By default cfx sets the `extensions.sdk.console.logLevel` to `info` when
-it's running a browser instance. You may wish to go into `about:config` and
-add the entry `extensions.jid1-BUBBLEIs7871vQ.sdk.console.logLevel` with the
-value "all" to get full debug output.
+By default cfx sets the `extensions.sdk.console.logLevel` to `info` when it's running a browser instance. You may wish to go into `about:config` and add the entry `extensions.jid1-BUBBLEIs7871vQ.sdk.console.logLevel` with the value "all" to get full debug output.
 
-## See Also
+## Links
 
 **SDK**:
 
-- [mozilla/addon-sdk](https://github.com/mozilla/addon-sdk)
+- [mozilla/addon-sdk on GitHub](https://github.com/mozilla/addon-sdk)
 - [sdk/system/environment](http://mzl.la/1wxoihW)
 - [sdk/io/file](http://mzl.la/1usXjqK)
 - [sdk/url](http://mzl.la/1yECxns)
