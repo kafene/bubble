@@ -148,5 +148,12 @@
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "POST,GET"
         }
+    },
+    {
+        "match": "kafene.org",
+        "match_type": "hostname",
+        "set_query_parameter": {
+            "working": "yes"
+        }
     }
 ]
