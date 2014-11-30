@@ -108,6 +108,7 @@ Icon courtesy of [rejon at openclipart.org](https://openclipart.org/detail/17767
 - [ ] Once sdk/io/fs.watchFile is implemented, use that instead of loading the config files on every request.
 - [ ] More detailed matching semantics for rules?
 - [ ] Some per-domain logic for loading content scripts and styles, maybe use something like "www.example.com.user.js" and look up filenames by hostname. Do allow something like "N.default.user.js" or just "default.user.js" for scripts that load on all pages. Maybe strip numeric prefix after sorting.
+- [ ] Cookie tweaks
 
 ## License
 
